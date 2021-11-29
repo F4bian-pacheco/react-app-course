@@ -17,11 +17,16 @@ const Clase3 = (props) => {
         // upcontador(prevContador => {return prevContador + 1})
     }
 
+    const handleClickReset = () =>{
+        upcontador(0);
+    }
+
     return (
         <div>
             <h1>Clase 3: Estado del componente, Renderizado Condicional y Eventos</h1>
             <h3>{contador}</h3>
             <button onClick ={handleClick}>Incrementar</button> 
+            <button onClick ={handleClickReset}>Reset</button> 
         </div>
     );
 }
