@@ -12,14 +12,16 @@ const Clase3 = (props) => {
     //     upcontador(contador+1)
     // },1000)
 
+    const handleClick = () => {
+        upcontador(contador + 1);
+        // upcontador(prevContador => {return prevContador + 1})
+    }
+
     return (
         <div>
             <h1>Clase 3: Estado del componente, Renderizado Condicional y Eventos</h1>
             <h3>{contador}</h3>
-            <button onClick ={()=>{
-                upcontador(contador + 1)
-                // upcontador(prevContador => {return prevContador + 1})
-            }}>Incrementar</button>
+            <button onClick ={handleClick}>Incrementar</button> 
         </div>
     );
 }
