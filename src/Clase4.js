@@ -2,6 +2,17 @@
 import {useState} from 'react';
 
 
+const Nousado = () => {
+    return(
+        <h3>Aun no se ha usado el contador</h3>
+    )
+}
+
+const ListOfClicks = ({clicks}) => {
+    return <p>{clicks.join(", ")}</p>
+}
+
+
 const Clase4 = () =>{
     //const [left, setleft] = useState(0); // mejores opciones
     //const [right, setright] = useState(0);
@@ -40,7 +51,11 @@ const Clase4 = () =>{
             {counters.right}
             <p>Clicks totales: {clicks.length}</p>
             {counters.mensaje} <br/>
-            {clicks.join(", ")}
+            {clicks.length === 0 ? (
+                <Nousado/>
+            ): (
+                <ListOfClicks clicks={clicks}/>
+            )}
         </div>
     );
 };
