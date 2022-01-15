@@ -32,8 +32,11 @@ const Content = (props) => {
 }
 
 const TotalEjecicios = (props) => {
-    const {...lista} = props
-    let total = lista['totales'].reduce((a,b) => a+b,0);
+    const {...lista} = props;
+    let total = 0
+    lista['totales'].forEach(element => {
+        total += element['ejercicios'];
+    });
     return <p>Number of exercises {total}</p>
 }
 
