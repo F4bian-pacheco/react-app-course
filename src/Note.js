@@ -1,6 +1,7 @@
 
 
-const Notes = ({ content, date }) => {
+export const Note = (props) => {
+    const {content,date} = props
     return (
         <li>
             <p>{content}</p>
@@ -10,7 +11,3 @@ const Notes = ({ content, date }) => {
         </li>
     )
 }
-
-
-
-export default Notes

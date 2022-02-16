@@ -24,6 +24,7 @@ const Content = (props) => {
     const {contenido} = props
     return (
         <div>
+
             <Parte parte={contenido[0].name} ejercicio={contenido[0].ejercicios} />
             <Parte parte={contenido[1].name} ejercicio={contenido[1].ejercicios} />
             <Parte parte={contenido[2].name} ejercicio={contenido[2].ejercicios} />

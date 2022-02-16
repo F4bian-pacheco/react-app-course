@@ -1,6 +1,6 @@
 
-import Notes from "./Note";
-
+import { Note } from "./Note";
+import Ejercicio5 from "./Ejercicio5";
 
 const notes = [
     {
@@ -28,11 +28,12 @@ const notes = [
 const Clase5 = () => {
     return (
         <div>
-            <h1>Clase 5: Renderizar Listas de Elementos</h1>
+            <h1>Clase 5: Renderizar Listas de Elementos y Formularios</h1>
             <ul>
                 {/* No es una buena practica */}
-                {notes.map((note) => <Notes key={note.id} {...note} />)}
+                {notes.map((note) => <Note key={note.id} {...note} />)}
             </ul>
+            <Ejercicio5 />
         </div>
     )
 }
