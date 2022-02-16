@@ -1,12 +1,5 @@
 
 
-// const Titulo ({curso}) => {
-//     return <h2>{curso}</h2>
-// }
-
-// const Titulo ({curso}) => <h2>{curso}</h2> --> one liner
-
-
 const Titulo = (props) => {
     const { curso } = props
     // const curso = props.curso
