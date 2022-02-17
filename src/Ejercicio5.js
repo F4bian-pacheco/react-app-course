@@ -103,11 +103,17 @@ const Ejercicio5 = () => {
 
     return (
         <div>
-            <Titulo curso={course} />
+            {courses.map((curso) => {
+                return (
+                    <div key={curso.id}>
+                        <Titulo curso={curso} />
 
-            <Content contenido={course.partes} />
+                        <Content contenido={curso.parts} />
 
-            <TotalEjecicios totales={course.partes} />
+                        <TotalEjecicios totales={curso.parts} />
+                    </div>
+                )
+            })}
         </div>
     )
 }
