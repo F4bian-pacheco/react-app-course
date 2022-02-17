@@ -19,7 +19,7 @@ const Content = (props) => {
         <div>
             {contenido.map((content) => {
                 return (
-                    <Parte parte={content.name} ejercicio={content.ejercicios} />
+                    <Parte parte={content.name} ejercicio={content.exercises} />
 
                 )
             })}
@@ -31,7 +31,7 @@ const TotalEjecicios = (props) => {
     const { ...lista } = props;
     let total = 0
     lista['totales'].forEach(element => {
-        total += element['ejercicios'];
+        total += element['exercises'];
     });
     return <p>Number of exercises {total}</p>
 }
@@ -99,10 +99,58 @@ const Ejercicio5 = () => {
                 },
             ],
         },
+        {
+            name: 'Node.js',
+            id: 3,
+            parts: [
+                {
+                    name: 'Routing',
+                    exercises: 3,
+                    id: 1,
+                },
+                {
+                    name: 'Middlewares',
+                    exercises: 7,
+                    id: 2,
+                },
+            ],
+        },
+        {
+            name: 'Node.js',
+            id: 4,
+            parts: [
+                {
+                    name: 'Routing',
+                    exercises: 3,
+                    id: 1,
+                },
+                {
+                    name: 'Middlewares',
+                    exercises: 7,
+                    id: 2,
+                },
+            ],
+        },
+        {
+            name: 'Node.js',
+            id: 5,
+            parts: [
+                {
+                    name: 'Routing',
+                    exercises: 3,
+                    id: 1,
+                },
+                {
+                    name: 'Middlewares',
+                    exercises: 7,
+                    id: 2,
+                },
+            ],
+        }
     ]
 
     return (
-        <div>
+        <div className="div-clase5">
             {courses.map((curso) => {
                 return (
                     <div key={curso.id}>

@@ -12,3 +12,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.div-clase5{
+  display: flex;
+  text-align: left;
+  justify-content: space-around;
+  overflow-x: scroll;
+}
+
+.div-clase5 h2{
+  word-wrap: break-word;
+  width: 300px;
+}
+
+.div-clase5 hr{
+    border: none;
+    border-left: 1px solid hsla(200, 10%, 50%,100);
+    height: inherit;     
+    width: 1px; 
+}

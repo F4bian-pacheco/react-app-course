@@ -29,11 +29,14 @@ const Clase5 = () => {
     return (
         <div>
             <h1>Clase 5: Renderizar Listas de Elementos y Formularios</h1>
-            <ul>
-                {/* No es una buena practica */}
-                {notes.map((note) => <Note key={note.id} {...note} />)}
-            </ul>
-            <Ejercicio5 />
+            <div>
+                <ul>
+                    {/* No es una buena practica */}
+                    {notes.map((note) => <Note key={note.id} {...note} />)}
+                </ul>
+                <hr />
+                <Ejercicio5 />
+            </div>
         </div>
     )
 }
