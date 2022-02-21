@@ -51,7 +51,6 @@ const Clase5 = (props) => {
                         return <Note key={note.index} {...note} />
                     })}
                 </ol>
-                <hr />
                 <Ejercicio5 />
                 <h2>Añadir Notas</h2>
                 {/* Por defecto, en un formulario, el ultimo boton
