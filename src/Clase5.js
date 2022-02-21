@@ -31,12 +31,14 @@ const Clase5 = () => {
             <h1>Clase 5: Renderizar Listas de Elementos y Formularios</h1>
             <div>
                 <h2>Notas</h2>
-                <ul>
+                <ul id="list_notes">
                     {/* No es una buena practica */}
                     {notes.map((note) => <Note key={note.id} {...note} />)}
                 </ul>
                 <hr />
                 <Ejercicio5 />
+                <h2>Añadir Notas</h2>
+
             </div>
         </div>
     )

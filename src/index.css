@@ -32,3 +32,8 @@ code {
     height: inherit;     
     width: 1px; 
 }
+
+#list_notes{
+  margin: auto;
+  width: 300px;
+}
