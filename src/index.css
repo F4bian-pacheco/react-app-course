@@ -16,7 +16,8 @@ code {
 .div-clase5{
   display: flex;
   text-align: left;
-  justify-content: space-around;
+  margin: 20px;
+  justify-content: space-between;
   overflow-x: scroll;
 }
 
