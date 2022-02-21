@@ -1,43 +1,65 @@
 
 import { Note } from "./Note";
 import Ejercicio5 from "./Ejercicio5";
-
-const notes = [
-    {
-        id: 1,
-        content: 'HTML is easy',
-        date: '2019-05-30T17:30:31.098Z',
-        important: true,
-    },
-    {
-        id: 2,
-        content: 'Browser can execute only JavaScript',
-        date: '2019-05-30T18:39:34.091Z',
-        important: false,
-    },
-    {
-        id: 3,
-        content: 'GET and POST are the most important methods of HTTP protocol',
-        date: '2019-05-30T19:20:14.298Z',
-        important: true,
-    },
-]
+import { useState } from "react";
 
 
 
-const Clase5 = () => {
+const Clase5 = (props) => {
+
+    const [notes, setNotes] = useState(props.notes) // mostrar notas
+    const [newNote,SetNewNote] = useState("") // añadir notas
+    const [Showall,SetShowall] = useState(true) // mostrar notas importantes
+
+    const HandleChange = (event) => {
+        const newnote = event.target.value
+        SetNewNote(newnote)
+        console.log(newnote)
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const noteToAddState = {
+            id: notes.length + 1,
+            content: newNote,
+            date: new Date().toISOString(),
+            important: Math.random() < 0.5
+        }
+        console.log(noteToAddState)
+        setNotes(notes.concat(noteToAddState))
+        SetNewNote("")
+    }
+
+    const handdleShowAll = () => {
+        SetShowall(() => !Showall)
+    }
+
     return (
         <div>
             <h1>Clase 5: Renderizar Listas de Elementos y Formularios</h1>
             <div>
                 <h2>Notas</h2>
-                <ul id="list_notes">
+                <button onClick={handdleShowAll}>{Showall ? "Show only important": "Show All"}</button>
+                <ol id="list_notes">
                     {/* No es una buena practica */}
-                    {notes.map((note) => <Note key={note.id} {...note} />)}
-                </ul>
+                    {notes
+                    .filter((note) => {
+                        if (Showall === true) return true
+                        return note.important === true
+                    })
+                    .map((note) => {
+                        return <Note key={note.index} {...note} />
+                    })}
+                </ol>
                 <hr />
                 <Ejercicio5 />
                 <h2>Añadir Notas</h2>
+                {/* Por defecto, en un formulario, el ultimo boton
+                    funciona como un submit*/}
+                <form onSubmit={handleSubmit}>
+                    <input onChange={HandleChange} type="text" value={newNote}/>
+                    <button>Crear nota</button>
+                </form>
 
             </div>
         </div>
