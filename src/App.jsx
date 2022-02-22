@@ -3,6 +3,7 @@ import Ejercicio1 from './Ejercicio1.js';
 import Clase3 from './Clase3.js';
 import Clase4 from './Clase4.js';
 import Clase5 from './Clase5.js';
+import Clase6 from './Clase6.js';
 
 // const App = () => {
 //     return (
@@ -58,6 +59,9 @@ function App() {
         <br />
         <hr />
         <Clase5 notes = {notes} />
+        <br />
+        <hr />
+        <Clase6 />
     </div>
     );
 }
