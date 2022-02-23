@@ -48,7 +48,7 @@ const Clase5 = (props) => {
                         return note.important === true
                     })
                     .map((note) => {
-                        return <Note key={note.index} {...note} />
+                        return <Note key={note.id} {...note} />
                     })}
                 </ol>
                 <Ejercicio5 />
