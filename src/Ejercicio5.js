@@ -19,7 +19,7 @@ const Content = (props) => {
         <div>
             {contenido.map((content) => {
                 return (
-                    <Parte parte={content.name} ejercicio={content.exercises} />
+                    <Parte key={content.id} parte={content.name} ejercicio={content.exercises} />
 
                 )
             })}
