@@ -1,6 +1,8 @@
 import { Post } from "./Post";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { getAllPosts } from "./Services/Posts/getAllPosts";
+import { createPosts } from "./Services/Posts/createPosts";
 
 
 // const posts_s = [
@@ -32,12 +34,10 @@ export default function Clase6() {
 
     useEffect(() => {
         SetLoading(true)
-        axios.get("https://jsonplaceholder.typicode.com/posts")
-                .then((json) => {
-                    const {data} = json
-                    setPost(data)
-                    SetLoading(false)
-                })
+        getAllPosts().then((posts) => {
+            setPost(posts)
+            SetLoading(false)
+        })
     }, [])
 
     const HandleChange = (event) => {
@@ -48,13 +48,19 @@ export default function Clase6() {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+
         const postToAddState = {
-            id: posts.length + 1,
             title: newPost,
-            body: newPost
+            body: newPost,
+            userId: 1
         }
-        console.log(postToAddState)
-        setPost(posts.concat(postToAddState))
+
+        createPosts(postToAddState)
+            .then(newpost => {
+                setPost(prevPost => prevPost.concat(newpost))
+            })
+        
+        //   
         SetNewPost("")
     }
 
