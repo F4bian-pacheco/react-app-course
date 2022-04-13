@@ -31,6 +31,7 @@ export default function Clase6() {
     const [posts, setPost] = useState([]) // mostrar posts
     const [newPost, SetNewPost] = useState("") // añadir post
     const [Loading,SetLoading] = useState(false)
+    const [error,SetError] = useState("")
 
     useEffect(() => {
         SetLoading(true)
@@ -55,9 +56,13 @@ export default function Clase6() {
             userId: 1
         }
 
+        SetError("")
         createPosts(postToAddState)
             .then(newpost => {
                 setPost(prevPost => prevPost.concat(newpost))
+            })
+            .catch((error) => {
+                SetError("La api no funciona")
             })
         
         //   
@@ -83,6 +88,7 @@ export default function Clase6() {
                     <input onChange={HandleChange} type="text" value={newPost} />
                     <button>Crear Post</button>
                 </form>
+                {error ? <span style={{color:'red'}}> {error} </span> : "todo va bien" }
             </div>
         </div>
     )
