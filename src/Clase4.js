@@ -22,7 +22,9 @@ const Clase4 = () =>{
         right: 0,
         mensaje: "Mensaje en el estado"
     });
-    const [clicks, setClicks] = useState([]);
+    // const [clicks, setClicks] = useState([]);
+
+    const [clcial, setClicks] = useState([])
 
     const handleClickLeft = () => {
         const newcounterState = {
