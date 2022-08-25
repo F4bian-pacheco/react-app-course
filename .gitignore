@@ -12,4 +12,6 @@ yarn-error.log*
 /.changelog
 .npm/
 yarn.lock
-./*desktop.ini*
+desktop.ini*
+src/desktop.ini*
+src/Services/desktop.ini*
